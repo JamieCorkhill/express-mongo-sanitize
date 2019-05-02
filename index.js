@@ -72,7 +72,7 @@ function sanitize(target, options) {
 
 function middleware(options) {
   return function(req, res, next) {
-    ['body', 'params', 'query', 'header'].forEach(function(k) {
+    ['body', 'params', 'query', 'headers'].forEach(function(k) {
       if(req[k]) {
         req[k] = sanitize(req[k], options);
       }
